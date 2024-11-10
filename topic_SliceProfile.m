@@ -7,22 +7,22 @@ addpath ./compiled/
 addpath ./RF/
 
 % Protocol Para
-Prot_Thickness = 10; % [ mm ]
+Prot_Thickness = 10; % [ mm ] 
 
 % Phantom Para
-T1 = -1; % [ ms ]
+T1 = -1; % [ ms ] % set -1 to turn off Relaxation
 T2 = -1; % [ ms ]
 
 % Simulation Box Parameter
 
 BOXPARA = auxil_BoxParaEnum_Init();
 
-BOXPARA.PosXNum = 1;
-BOXPARA.PosYNum = 1;
-BOXPARA.PosZNum = 2000;
-BOXPARA.PosXLim = [-1, 1] * 0;
-BOXPARA.PosYLim = [-1, 1] * 0;
-BOXPARA.PosZLim = [-1, 1] * 100;
+BOXPARA.PosXNum = 1; % Number of Position along X direction
+BOXPARA.PosYNum = 1; % Number of Position along y direction
+BOXPARA.PosZNum = 2000; % Number of Position along z direction
+BOXPARA.PosXLim = [-1, 1] * 0; % Simulation Box Boundary in x
+BOXPARA.PosYLim = [-1, 1] * 0; % Simulation Box Boundary in y
+BOXPARA.PosZLim = [-1, 1] * 100; % Simulation Box Boundary in z
 BOXPARA.B0Arr = 0;
 BOXPARA.B1Arr = 1; 
 BOXPARA.T1Arr = -1;
@@ -40,7 +40,7 @@ RF_REF = rf;
 
 SBB_MT_RF = auxil_PSD_RF_Load_Siemens(RF_REF, PSD_RF_MT_Duration, 90/180*pi, Prot_Thickness);
 SBB_MT_RF.phs_arr = SBB_MT_RF.phs_arr;
-% figure(1), auxil_PSD_Plot(SBB_MT_RF);
+% figure(1), auxil_PSD_Plot(SBB_MT_RF); % Uncomment to check the Pulse Sequence Time Series
 
 % SpinState
 
