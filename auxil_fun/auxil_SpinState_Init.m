@@ -1,0 +1,14 @@
+function SPINSTATE = auxil_SpinState_Init()
+
+SPINSTATE.SpinX = 0;
+SPINSTATE.SpinY = 0;
+SPINSTATE.SpinZ = 1;
+SPINSTATE.PosX = 0;
+SPINSTATE.PosY = 0;
+SPINSTATE.PosZ = 0;
+SPINSTATE.B0 = 0;
+SPINSTATE.B1 = 1;
+SPINSTATE.T1 = -1;
+SPINSTATE.T2 = -1;
+
+end
